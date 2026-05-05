@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "./ui/Button";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,7 +56,7 @@ export function About() {
         <div className="order-2 lg:order-1">
           <h2 className="font-display text-5xl md:text-7xl mb-8 uppercase leading-[0.9]">
             <span className="text-mask-container block">
-              <span className="about-text-mask block text-brava-gold">No somos</span>
+              <span className="about-text-mask gold-text block">No somos</span>
             </span>
             <span className="text-mask-container block">
               <span className="about-text-mask block" style={{ color: '#F4F4F5' }}>
@@ -87,7 +88,9 @@ export function About() {
 
           <div className="text-mask-container">
             <div className="about-text-mask">
-              <Button variant="outline">Conoce a los Entrenadores</Button>
+              <Link href="/conocenos">
+                <Button variant="outline">Conócenos</Button>
+              </Link>
             </div>
           </div>
         </div>

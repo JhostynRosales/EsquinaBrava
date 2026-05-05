@@ -3,7 +3,29 @@
 :root {
   --background: #050505; /* Deep Black */
   --foreground: #F4F4F5; /* Off-white */
-  --brava-gold: #D4AF37; /* Matte Gold */
+  --brava-gold: #D4AF37; /* Matte Gold (fallback sólido) */
+
+  /* Gradiente metálico premium — replica el brillo de la aleación dorada del logo */
+  --gold-gradient: linear-gradient(
+    45deg,
+    #B8860B 0%,
+    #D4AF37 35%,
+    #F7EF8A 50%,
+    #D4AF37 65%,
+    #B8860B 100%
+  );
+
+  /* Shimmer shift para la animación de barrido de luz GSAP */
+  --gold-gradient-shimmer: linear-gradient(
+    105deg,
+    #B8860B 0%,
+    #D4AF37 30%,
+    #F7EF8A 45%,
+    #FFF8C4 50%,
+    #F7EF8A 55%,
+    #D4AF37 70%,
+    #B8860B 100%
+  );
 }
 
 @theme inline {
@@ -43,4 +65,58 @@ body {
 .text-mask-element {
   display: inline-block;
   transform: translateY(110%);
+}
+
+/* ============================================
+   UTILIDADES DE GRADIENTE METÁLICO PREMIUM
+   ============================================ */
+
+/* Texto con gradiente metálico dorado */
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Borde con gradiente metálico (via box-shadow trick) */
+.gold-border-gradient {
+  border: 1.5px solid transparent;
+  background-image: var(--gold-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Logo circular — marco con gradiente metálico */
+.logo-circle {
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  border: 2.5px solid transparent;
+  background-image: var(--gold-gradient), none;
+  background-origin: border-box;
+  background-clip: border-box, padding-box;
+  box-shadow:
+    0 0 28px rgba(212, 175, 55, 0.35),
+    0 0 70px rgba(212, 175, 55, 0.12),
+    inset 0 0 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+/* Shimmer overlay para la animación GSAP */
+.logo-shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 248, 196, 0.55) 50%,
+    transparent 80%
+  );
+  transform: translateX(-150%);
+  will-change: transform;
 }

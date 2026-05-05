@@ -68,7 +68,7 @@ export function Classes() {
       <div className="max-w-7xl mx-auto px-4 md:px-12 relative z-10">
         <h2 className="classes-title font-display text-7xl md:text-9xl mb-16 uppercase drop-shadow-md" style={{ color: '#050505' }}>
           Nuestras <br />
-          <span className="text-brava-gold">Disciplinas</span>
+          <span className="gold-text">Disciplinas</span>
         </h2>
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-4 lg:gap-12 justify-end mt-[-100px] md:mt-[-200px] relative z-20">
@@ -85,13 +85,20 @@ export function Classes() {
                 {cls.desc}
               </p>
               <div className="border-t pt-4 mb-8" style={{ borderColor: 'rgba(244,244,245,0.1)' }}>
-                <p className="font-display tracking-widest text-sm text-brava-gold">
+                <p className="font-display tracking-widest text-sm gold-text">
                   {cls.time}
                 </p>
               </div>
-              <Button variant="outline" className="w-full">
-                Reservar
-              </Button>
+              <a 
+                href={`https://wa.me/34600000000?text=${encodeURIComponent(`Hola, me gustaría reservar una clase de ${cls.title}.`)}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="block w-full"
+              >
+                <Button variant="outline" className="w-full">
+                  Reservar
+                </Button>
+              </a>
             </div>
           ))}
         </div>

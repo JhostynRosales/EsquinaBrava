@@ -120,7 +120,7 @@ export default function ConocenosPage() {
               </p>
               
               <a 
-                href={`https://wa.me/34600000000?text=${encodeURIComponent(`Hola, me gustaría información sobre entrenar con ${trainer.name}.`)}`} 
+                href={`https://wa.me/34699961487?text=${encodeURIComponent(`Hola, me gustaría información sobre entrenar con ${trainer.name}.`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block"

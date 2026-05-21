@@ -86,11 +86,11 @@ export function Classes() {
               </p>
               <div className="border-t pt-4 mb-8" style={{ borderColor: 'rgba(244,244,245,0.1)' }}>
                 <p className="font-display tracking-widest text-sm gold-text">
-                  {cls.time}
+                  Según Horario General
                 </p>
               </div>
               <a 
-                href={`https://wa.me/34600000000?text=${encodeURIComponent(`Hola, me gustaría reservar una clase de ${cls.title}.`)}`} 
+                href={`https://wa.me/34699961487?text=${encodeURIComponent(`Hola, me gustaría reservar una clase de ${cls.title}.`)}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="block w-full"
